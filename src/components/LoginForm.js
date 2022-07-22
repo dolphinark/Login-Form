@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 
-function LoginForm({ userName, handleLogin, setLogin }) {
+function LoginForm({ userName, handleLogin, setLogin, handleError, error }) {
   const nameRef = useRef();
   const emailRef = useRef();
   const passwordRef = useRef();
@@ -24,19 +24,20 @@ function LoginForm({ userName, handleLogin, setLogin }) {
       setLogin(true);
       handleLogin(details);
     } else {
-      console.log("incorrect");
+      handleError();
     }
   }
 
   return (
-    <form className="container" onClick={loginForm}>
+    <form className="container">
       <label htmlFor="name">Name</label>
       <input type="text" id="name" ref={nameRef} />
       <label htmlFor="email">E-mail</label>
       <input type="email" id="email" ref={emailRef} />
       <label htmlFor="password">Password</label>
       <input type="text" id="password" ref={passwordRef} />
-      <button>Login</button>
+      {error}
+      <button onClick={loginForm}>Login</button>
     </form>
   );
 }
