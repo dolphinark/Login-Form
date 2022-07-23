@@ -25,9 +25,9 @@ function App() {
   return (
     <div className="App">
       {login ? (
-        <>
-        <span>Welcome {useName}</span> <button onClick={handleLogout}>Log out</button>
-        </>
+        <div className="welcome">
+        <h2>Welcome <span>{useName}</span></h2> <button onClick={handleLogout}>Log out</button>
+        </div>
       ) : (
         <LoginForm setLogin={setLogin} handleLogin={handleLogin} userName={userName} handleError={handleError} error={error}/>
       )}

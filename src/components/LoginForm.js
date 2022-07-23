@@ -29,15 +29,24 @@ function LoginForm({ userName, handleLogin, setLogin, handleError, error }) {
   }
 
   return (
-    <form className="container">
-      <label htmlFor="name">Name</label>
-      <input type="text" id="name" ref={nameRef} />
-      <label htmlFor="email">E-mail</label>
-      <input type="email" id="email" ref={emailRef} />
-      <label htmlFor="password">Password</label>
-      <input type="text" id="password" ref={passwordRef} />
-      {error}
-      <button onClick={loginForm}>Login</button>
+    <form>
+      <div className="container">
+        <h2>Log in</h2>
+        <div className="form-info">
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" ref={nameRef} />
+        </div>
+        <div className="form-info">
+          <label htmlFor="email">E-mail</label>
+          <input type="email" id="email" ref={emailRef} />
+        </div>
+        <div className="form-info">
+          <label htmlFor="password">Password</label>
+          <input type="text" id="password" ref={passwordRef} />
+        </div>
+        <div className="error">{error}</div>
+        <input type="submit" value="LOGIN" onClick={loginForm} />
+      </div>
     </form>
   );
 }
