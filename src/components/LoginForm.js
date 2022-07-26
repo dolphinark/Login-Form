@@ -34,7 +34,7 @@ function LoginForm({ userName, handleLogin, setLogin, handleError, error }) {
         <h2>Log in</h2>
         <div className="form-info">
           <label htmlFor="name">Name</label>
-          <input type="text" id="name" ref={nameRef} />
+          <input type="text" id="name" ref={nameRef} autoFocus/>
         </div>
         <div className="form-info">
           <label htmlFor="email">E-mail</label>
