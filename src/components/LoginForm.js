@@ -38,11 +38,11 @@ function LoginForm({ userName, handleLogin, setLogin, handleError, error }) {
         </div>
         <div className="form-info">
           <label htmlFor="email">E-mail</label>
-          <input type="email" id="email" ref={emailRef} />
+          <input type="email" id="email" ref={emailRef} autoComplete="off"/>
         </div>
         <div className="form-info">
           <label htmlFor="password">Password</label>
-          <input type="text" id="password" ref={passwordRef} />
+          <input type="text" id="password" ref={passwordRef} autoComplete="off"/>
         </div>
         <div className="error">{error}</div>
         <input type="submit" value="LOGIN" onClick={loginForm} />
