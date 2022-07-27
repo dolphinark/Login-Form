@@ -29,7 +29,7 @@ function LoginForm({ userName, handleLogin, setLogin, handleError, error }) {
   }
 
   return (
-    <form>
+    <form onSubmit={loginForm}>
       <div className="container">
         <h2>Log in</h2>
         <div className="form-info">
@@ -38,14 +38,15 @@ function LoginForm({ userName, handleLogin, setLogin, handleError, error }) {
         </div>
         <div className="form-info">
           <label htmlFor="email">E-mail</label>
-          <input type="email" id="email" ref={emailRef} autoComplete="off"/>
+          <input type="email" id="email" ref={emailRef} autoComplete="off" required/>
         </div>
         <div className="form-info">
           <label htmlFor="password">Password</label>
-          <input type="text" id="password" ref={passwordRef} autoComplete="off"/>
+          <input type="password" id="password" ref={passwordRef} autoComplete="off"/>
         </div>
         <div className="error">{error}</div>
-        <input type="submit" value="LOGIN" onClick={loginForm} />
+        {/* <input type="submit" value="LOGIN" onClick={loginForm} /> */}
+        <button>LOGIN</button>
       </div>
     </form>
   );
